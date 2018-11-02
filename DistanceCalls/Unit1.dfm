@@ -27,81 +27,108 @@ object Form1: TForm1
     Height = 13
     Caption = #1042#1099#1079#1099#1074#1072#1077#1084#1099#1081' '#1072#1073#1086#1085#1077#1085#1090
   end
-  object LabelOutCountry: TLabel
-    Left = 22
-    Top = 441
+  object LabelFromCountry: TLabel
+    Left = 44
+    Top = 407
     Width = 76
     Height = 13
     Caption = #1042#1099' '#1079#1074#1086#1085#1080#1090#1077' '#1080#1079':'
+    Visible = False
   end
-  object LabelInCountry: TLabel
-    Left = 238
-    Top = 440
+  object LabelToCountry: TLabel
+    Left = 260
+    Top = 407
     Width = 71
     Height = 13
     Caption = #1042#1099' '#1079#1074#1086#1085#1080#1090#1077' '#1074':'
+    Visible = False
   end
   object LabelCallTime: TLabel
-    Left = 104
-    Top = 96
+    Left = 114
+    Top = 85
     Width = 159
     Height = 13
     Caption = #1055#1083#1072#1085#1080#1088#1091#1077#1084#1086#1077' '#1074#1088#1077#1084#1103' '#1088#1072#1079#1075#1086#1074#1086#1088#1072':'
   end
   object LabelMinutes: TLabel
-    Left = 319
-    Top = 96
+    Left = 329
+    Top = 83
     Width = 22
     Height = 13
     Caption = #1084#1080#1085'.'
   end
   object LabelDistanceBetweenCities: TLabel
-    Left = 104
-    Top = 77
+    Left = 124
+    Top = 380
     Width = 152
     Height = 13
     Caption = ' '#1056#1072#1089#1089#1090#1086#1103#1085#1080#1077' '#1084#1077#1078#1076#1091' '#1075#1086#1088#1086#1076#1072#1084#1080':'
+    Visible = False
   end
   object LabelKilometrs: TLabel
-    Left = 320
-    Top = 72
+    Left = 339
+    Top = 380
     Width = 12
     Height = 13
     Caption = #1082#1084
+    Visible = False
   end
   object LabelCost: TLabel
-    Left = 8
-    Top = 156
+    Left = 18
+    Top = 169
     Width = 58
     Height = 13
     Caption = #1057#1090#1086#1080#1084#1086#1089#1090#1100':'
   end
   object Cost: TLabel
-    Left = 72
-    Top = 156
+    Left = 82
+    Top = 169
     Width = 6
     Height = 13
     Caption = '0'
   end
   object LabelPrice: TLabel
-    Left = 36
-    Top = 137
+    Left = 46
+    Top = 150
     Width = 30
     Height = 13
     Caption = #1062#1077#1085#1072':'
   end
   object Price: TLabel
-    Left = 72
-    Top = 137
+    Left = 82
+    Top = 150
     Width = 6
     Height = 13
     Caption = '0'
   end
-  object Image1: TImage
+  object Label1: TLabel
     Left = 36
-    Top = 267
-    Width = 585
-    Height = 94
+    Top = 446
+    Width = 412
+    Height = 13
+    Caption = 
+      '*'#1045#1089#1083#1080' '#1084#1077#1078#1076#1091' '#1075#1086#1088#1086#1076#1072#1084#1080' '#1088#1072#1089#1089#1090#1086#1103#1085#1080#1077' '#1084#1077#1085#1100#1096#1077' 5000 '#1080' '#1079#1074#1086#1085#1086#1082' '#1076#1083#1080#1090#1089#1103' '#1084#1077#1085#1077 +
+      #1077' 60 '#1084#1080#1085#1091#1090
+  end
+  object Label2: TLabel
+    Left = 154
+    Top = 465
+    Width = 177
+    Height = 13
+    Caption = #1057#1058#1054#1048#1052#1054#1057#1058#1068' '#1056#1040#1047#1043#1054#1042#1054#1056#1040' 0 '#1056#1059#1041#1051#1045#1049
+  end
+  object Label3: TLabel
+    Left = 114
+    Top = 431
+    Width = 256
+    Height = 13
+    Caption = #1055#1088#1080' '#1086#1076#1080#1085#1072#1082#1086#1074#1099#1093' '#1086#1087#1077#1088#1072#1090#1086#1088#1072#1093' '#1079#1074#1086#1085#1086#1082' '#1073#1077#1089#1087#1083#1072#1090#1085#1099#1081'*'
+  end
+  object Image1: TImage
+    Left = 49
+    Top = 256
+    Width = 386
+    Height = 73
     Picture.Data = {
       0A544A504547496D61676535B80000FFD8FFE107384578696600004D4D002A00
       0000080007011200030000000100010000011A00050000000100000062011B00
@@ -1578,45 +1605,50 @@ object Form1: TForm1
       BAF7BF75EEBDEFDD7BAF7BF75EEBDEFDD7BAF7BF75EEBDEFDD7BAF7BF75EEBDE
       FDD7BAEFDEBAF75D8B7F8FFBEBDBDFB3D5879F5D9B7E3FDF71FF0015F7A15EBD
       E5D7FFD9}
+    Visible = False
   end
-  object ComboBox1: TComboBox
-    Left = 104
-    Top = 437
+  object CountryFromBox: TComboBox
+    Left = 126
+    Top = 404
     Width = 95
     Height = 21
     TabOrder = 0
     Text = #1057#1090#1088#1072#1085#1072' '#1080#1079
+    Visible = False
   end
-  object ComboBox2: TComboBox
-    Left = 315
-    Top = 437
+  object CountryToBox: TComboBox
+    Left = 337
+    Top = 404
     Width = 98
     Height = 21
     TabOrder = 1
     Text = #1057#1090#1088#1072#1085#1072' '#1074
+    Visible = False
   end
   object CallTime: TEdit
-    Left = 269
-    Top = 93
+    Left = 279
+    Top = 80
     Width = 44
     Height = 21
     TabOrder = 2
   end
-  object ComboBox3: TComboBox
-    Left = 90
+  object OperatorFrom: TComboBox
+    Left = 82
     Top = 27
     Width = 95
     Height = 21
     TabOrder = 3
     Text = #1054#1087#1077#1088#1072#1090#1086#1088
+    OnChange = OperatorFromChange
     Items.Strings = (
-      'Yota'#11
-      #1052#1058#1057#11
-      #1052#1077#1075#1072#1092#1086#1085#11
-      #1041#1080#1083#1072#1081#1085#11
-      #1058#1077#1083#1077'2'#11)
+      'Yota'
+      #1052#1058#1057
+      #1052#1077#1075#1072#1092#1086#1085
+      #1041#1080#1083#1072#1081#1085
+      #1058#1077#1083#1077'2'
+      #1056#1086#1089#1090#1077#1083#1077#1082#1086#1084)
   end
-  object ComboBox4: TComboBox
+  object OperatorTo: TComboBox
     Left = 304
     Top = 27
     Width = 95
@@ -1624,15 +1656,16 @@ object Form1: TForm1
     TabOrder = 4
     Text = #1054#1087#1077#1088#1072#1090#1086#1088
     Items.Strings = (
-      'Yota'#11
-      #1052#1058#1057#11
-      #1052#1077#1075#1072#1092#1086#1085#11
-      #1041#1080#1083#1072#1081#1085#11
-      #1058#1077#1083#1077'2')
+      'Yota'
+      #1052#1058#1057
+      #1052#1077#1075#1072#1092#1086#1085
+      #1041#1080#1083#1072#1081#1085
+      #1058#1077#1083#1077'2'
+      #1056#1086#1089#1090#1077#1083#1077#1082#1086#1084)
   end
   object DateTimePicker1: TDateTimePicker
-    Left = 363
-    Top = 216
+    Left = 365
+    Top = 161
     Width = 101
     Height = 21
     Date = 43398.450035428240000000
@@ -1640,19 +1673,30 @@ object Form1: TForm1
     TabOrder = 5
   end
   object DistanceBetweenCities: TEdit
-    Left = 269
-    Top = 69
+    Left = 289
+    Top = 377
     Width = 44
     Height = 21
     TabOrder = 6
+    Text = '0'
+    Visible = False
   end
   object Button1: TButton
-    Left = 188
-    Top = 120
+    Left = 198
+    Top = 107
     Width = 75
     Height = 25
     Caption = #1056#1072#1089#1089#1095#1080#1090#1072#1090#1100
     TabOrder = 7
     OnClick = Button1Click
+  end
+  object CheckerCountry: TCheckBox
+    Left = 166
+    Top = 62
+    Width = 155
+    Height = 17
+    Caption = #1047#1074#1086#1085#1086#1082' '#1074' '#1076#1088#1091#1075#1091#1102' '#1089#1090#1088#1072#1085#1091
+    TabOrder = 8
+    OnClick = CheckerCountryClick
   end
 end

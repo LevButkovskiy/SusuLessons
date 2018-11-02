@@ -17,17 +17,17 @@
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-	TComboBox *ComboBox1;
+	TComboBox *CountryFromBox;
 	TLabel *LabelOutAbonent;
 	TLabel *LabelIncomingAbonent;
-	TLabel *LabelOutCountry;
-	TLabel *LabelInCountry;
-	TComboBox *ComboBox2;
+	TLabel *LabelFromCountry;
+	TLabel *LabelToCountry;
+	TComboBox *CountryToBox;
 	TLabel *LabelCallTime;
 	TEdit *CallTime;
 	TLabel *LabelMinutes;
-	TComboBox *ComboBox3;
-	TComboBox *ComboBox4;
+	TComboBox *OperatorFrom;
+	TComboBox *OperatorTo;
 	TDateTimePicker *DateTimePicker1;
 	TLabel *LabelDistanceBetweenCities;
 	TEdit *DistanceBetweenCities;
@@ -37,8 +37,14 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TLabel *LabelPrice;
 	TLabel *Price;
+	TLabel *Label1;
+	TLabel *Label2;
+	TLabel *Label3;
+	TCheckBox *CheckerCountry;
 	TImage *Image1;
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall CheckerCountryClick(TObject *Sender);
+	void __fastcall OperatorFromChange(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations
