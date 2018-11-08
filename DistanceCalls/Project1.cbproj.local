@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.943,\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Unit1.dfm=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.623,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.561,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.943,\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Unit1.h=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.943,\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Unit1.cpp=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.308,\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Project1.cbproj=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.360,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.601,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.337,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.540,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.623,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.308,C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1.cbproj=\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.265,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.430,\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Project1PCH1.h=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.360,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.943,C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.cpp=\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.243,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.601,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.943,C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.dfm=\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.943,C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Unit1.h=\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.430,C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h=\\Mac\Home\Documents\GitHub\SusuLessons\DistanceCalls\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.540,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.337,=C:\Program Files (x86)\Embarcadero\Studio\19.0\Projects\Project1PCH1.h</Transaction>
   </Transactions>
 </BorlandProject>

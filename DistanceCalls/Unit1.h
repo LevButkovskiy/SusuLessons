@@ -17,12 +17,8 @@
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
-	TComboBox *CountryFromBox;
 	TLabel *LabelOutAbonent;
 	TLabel *LabelIncomingAbonent;
-	TLabel *LabelFromCountry;
-	TLabel *LabelToCountry;
-	TComboBox *CountryToBox;
 	TLabel *LabelCallTime;
 	TEdit *CallTime;
 	TLabel *LabelMinutes;
@@ -40,12 +36,18 @@ __published:	// IDE-managed Components
 	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
-	TCheckBox *CheckerCountry;
 	TLabel *Error1;
 	TLabel *Error2;
+	TLabel *Label4;
+	TLabel *skidkaValue;
 	void __fastcall Button1Click(TObject *Sender);
-	void __fastcall CheckerCountryClick(TObject *Sender);
 	void __fastcall OperatorFromChange(TObject *Sender);
+	void __fastcall CallTimeKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall FormActivate(TObject *Sender);
+	void __fastcall OperatorFromKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall OperatorToKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall DateTimePicker1KeyPress(TObject *Sender, System::WideChar &Key);
+
 
 private:	// User declarations
 public:		// User declarations
