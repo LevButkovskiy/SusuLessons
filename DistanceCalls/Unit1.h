@@ -41,7 +41,8 @@ __published:	// IDE-managed Components
 	TLabel *Label2;
 	TLabel *Label3;
 	TCheckBox *CheckerCountry;
-	TImage *Image1;
+	TLabel *Error1;
+	TLabel *Error2;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall CheckerCountryClick(TObject *Sender);
 	void __fastcall OperatorFromChange(TObject *Sender);

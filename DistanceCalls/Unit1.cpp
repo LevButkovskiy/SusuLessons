@@ -10,82 +10,145 @@
 TForm1 *Form1;
 	int DistanceValue, timeValue;
 	int indexOperatorFrom, indexOperatorTo;
-	float priceValue, CostValue;
+	int DateDay, DateMounth;
+	int skidka;
+	float priceValue, costValue;
 	float checkPrice(int Distance, int indexOperatorFrom, int timeValue);
+	float checkCost(int Distance, int indexOperatorFrom, int timeValue);
+	float checkSkidka(int skidka, float priceValue, float costValue);
+	void checkDate(int DateDay, int DateMounth);
+	bool isChecked;
+    bool checkError2(int skidka);
+
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-
+    DistanceValue = 0;
+	timeValue = 0;
+	costValue = 0;
+	skidka = 0;
+	isChecked = false;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-
-	DistanceValue = 0;
-	timeValue = 0;
-	CostValue = 0;
+	DateDay = StrToInt(DateTimePicker1->Date.FormatString("dd"));
+	DateMounth = StrToInt(DateTimePicker1->Date.FormatString("mm"));
+	checkDate(DateDay, DateMounth);
 	DistanceValue = StrToInt(DistanceBetweenCities->Text);
 	timeValue = StrToInt(CallTime->Text);
 	indexOperatorFrom = OperatorFrom->ItemIndex;
 	indexOperatorTo = OperatorTo->ItemIndex;
-	if(OperatorFrom->ItemIndex == OperatorTo->ItemIndex && DistanceValue <= 5000 && timeValue <= 60)
+	if(OperatorFrom->ItemIndex == OperatorTo->ItemIndex && DistanceValue <= 5000 && timeValue <= 60){
 		priceValue = 0;
+		costValue = 0;
+	}
+	else{
+		priceValue = checkPrice(DistanceValue, indexOperatorFrom, timeValue);
+		costValue = checkCost(DistanceValue, indexOperatorFrom, timeValue);
+	}
+	costValue = checkSkidka(skidka, priceValue, costValue);
+	if (checkError2) {
+		Error2->Visible = true;
+	}
 	Price->Caption = FloatToStrF(priceValue, ffCurrency, 6, 2);
-	CostValue = checkPrice(DistanceValue, indexOperatorFrom, timeValue);
-	Cost->Caption = FloatToStrF(CostValue, ffCurrency, 6, 2);
+	Cost->Caption = FloatToStrF(costValue, ffCurrency, 6, 2);
 }
 
-float checkPrice(int Distance, int indexOperatorFrom, int timeValue){
+float checkCost(int Distance, int indexOperatorFrom, int timeValue){
 	switch(indexOperatorFrom){
-		case 0:                                                             //Yota
-			 priceValue = 0;
-			 CostValue = 0;
+		case 0:                                                             //+Yota
+			priceValue = 2.5;
+			costValue = priceValue * timeValue;
 		break;
 		case 1:                                                             //+MTS
-		priceValue = 3;
-		CostValue = priceValue * timeValue;
+			priceValue = 3;
+			costValue = priceValue * timeValue;
 		break;
 		case 2:                                                             //+Megafon
 			if(timeValue == 1){
 				priceValue = 15;
-				CostValue = 15;
+				costValue = 15;
 			}
 			else if(timeValue >= 2 && timeValue <= 10){
 				priceValue = 0;
-				CostValue = 15;
+				costValue = 15;
 			}
 			else if (timeValue >= 11){
 				priceValue = 2.5;
-				CostValue = 15 + priceValue * (timeValue-11);
+				costValue = 15 + priceValue * (timeValue-11);
 			}
 			break;
-		case 3:                                                             //BeeLine
+		case 3:                                                             //+BeeLine
+			priceValue = 2;
+			costValue = priceValue * timeValue;
 		break;
-		case 4:                                                             //Tele2
+		case 4:                                                             //+Tele2
+			priceValue = 3;
+			costValue = priceValue * timeValue;
 		break;
 		case 5:                                                             //+Rostelekom
-		if (Distance <= 100) priceValue = 2.15;
-		else if (Distance > 100 && Distance <= 600) priceValue = 3.75;
-		else if (Distance > 600 && Distance <= 1200) priceValue = 4.13;
-		else if (Distance > 1200 && Distance <= 3000) priceValue = 4.00;
-		else if (Distance > 3000 && Distance <= 5000) priceValue = 5.55;
-		else if (Distance > 5000) priceValue = 6.15;
-		CostValue = priceValue * timeValue;
+			if (Distance <= 100) priceValue = 2.15;
+			else if (Distance > 100 && Distance <= 600) priceValue = 3.75;
+			else if (Distance > 600 && Distance <= 1200) priceValue = 4.13;
+			else if (Distance > 1200 && Distance <= 3000) priceValue = 4.00;
+			else if (Distance > 3000 && Distance <= 5000) priceValue = 5.55;
+			else if (Distance > 5000) priceValue = 6.15;
+			costValue = priceValue * timeValue;
 		break;
 	}
-	return CostValue;
+	return costValue;
 
 }
 //---------------------------------------------------------------------------
 
+float checkPrice(int Distance, int indexOperatorFrom, int timeValue){
+	switch(indexOperatorFrom){
+		case 0:                                                                  //+Yota
+			priceValue = 2.5;
+		break;
+		case 1:                                                                  //+MTS
+			priceValue = 3;
+		break;
+		case 2:                                                                  //+Megafon
+			if(timeValue == 1){
+				priceValue = 15;
+			}
+			else if(timeValue >= 2 && timeValue <= 10){
+				priceValue = 0;
+			}
+			else if (timeValue >= 11){
+				priceValue = 2.5;
+			}
+			break;
+		case 3:                                                                  //+BeeLine
+			priceValue = 2;
+		break;
+		case 4:                                                                  //+Tele2
+			priceValue = 3;
+		break;
+		case 5:                                                                  //+Rostelekom
+			if (Distance <= 100) priceValue = 2.15;
+			else if (Distance > 100 && Distance <= 600) priceValue = 3.75;
+			else if (Distance > 600 && Distance <= 1200) priceValue = 4.13;
+			else if (Distance > 1200 && Distance <= 3000) priceValue = 4.00;
+			else if (Distance > 3000 && Distance <= 5000) priceValue = 5.55;
+			else if (Distance > 5000) priceValue = 6.15;
+		break;
+	}
+	return priceValue;
+}
+//---------------------------------------------------------------------------
 
 void __fastcall TForm1::CheckerCountryClick(TObject *Sender)
 {
+	isChecked = true;
 	indexOperatorFrom = OperatorFrom->ItemIndex;
 	if(indexOperatorFrom == -1){
 	CheckerCountry->Checked = false;
+	Error1->Visible = true;
 	}
 	else{
 		if(CheckerCountry->Checked && indexOperatorFrom == 5){
@@ -106,7 +169,6 @@ void __fastcall TForm1::CheckerCountryClick(TObject *Sender)
 			Price->Top = 356;
 			LabelCost->Top = 394;
 			Cost->Top = 394;
-			DateTimePicker1->Top = 378;
 		}
 		else if (CheckerCountry->Checked == false && indexOperatorFrom == 5){
 			CountryFromBox->Visible = false;
@@ -126,7 +188,6 @@ void __fastcall TForm1::CheckerCountryClick(TObject *Sender)
 			Price->Top = 308;
 			LabelCost->Top = 346;
 			Cost->Top = 346;
-			DateTimePicker1->Top = 330;
 		}
 		else if (CheckerCountry->Checked == false && indexOperatorFrom != 5){
 			CountryFromBox->Visible = false;
@@ -146,7 +207,6 @@ void __fastcall TForm1::CheckerCountryClick(TObject *Sender)
 			Price->Top = 278;
 			LabelCost->Top = 316;
 			Cost->Top = 316;
-			DateTimePicker1->Top = 300;
 		}
 		else if (CheckerCountry->Checked && indexOperatorFrom != 5){
 			CountryFromBox->Visible = true;
@@ -167,7 +227,6 @@ void __fastcall TForm1::CheckerCountryClick(TObject *Sender)
 			Price->Top = 326;
 			LabelCost->Top = 364;
 			Cost->Top = 364;
-			DateTimePicker1->Top = 348;
 		}
 	}
 }
@@ -175,14 +234,14 @@ void __fastcall TForm1::CheckerCountryClick(TObject *Sender)
 
 
 void __fastcall TForm1::OperatorFromChange(TObject *Sender)
-{   
+{
+	if(isChecked){
+        indexOperatorFrom = OperatorFrom->ItemIndex;
+		if(indexOperatorFrom != -1){
+			Error1->Visible = false;
+		}
+	}
 	indexOperatorFrom = OperatorFrom->ItemIndex;
-	if(indexOperatorFrom == 0) {
-		Image1->Visible = true;
-	}
-	else{
-		Image1->Visible = false;
-	}
 	CheckerCountry->Checked = false;	
 	if(indexOperatorFrom == 5){
 		LabelDistanceBetweenCities->Visible = true;
@@ -205,7 +264,6 @@ void __fastcall TForm1::OperatorFromChange(TObject *Sender)
 		Price->Top = 310;
 		LabelCost->Top = 348;
 		Cost->Top = 348;
-		DateTimePicker1->Top = 332;
 		CheckerCountry->Top = 156;
 	}
 	else{
@@ -227,11 +285,84 @@ void __fastcall TForm1::OperatorFromChange(TObject *Sender)
 		Price->Top = 262;
 		LabelCost->Top = 300;
 		Cost->Top = 300;
-		DateTimePicker1->Top = 284;
 
-		
+
 	}
 }
 //---------------------------------------------------------------------------
 
+void checkDate(int DateDay, int DateMounth){
+	switch(DateMounth){
+	case 1:
+		if(DateDay > 0 && DateDay < 8){
+			skidka = 5;
+		}
+		break;
+	case 2:
+		if(DateDay == 23){
+			skidka = 5;
+		}
+		break;
+	case 3:
+		if(DateDay == 8){
+			skidka = 5;
+		}
+		break;
+	case 4:
+		if(DateDay == 12){
+			skidka = 5;
+		}
+		break;
+	case 5:
+		if(DateDay == 1 || DateDay == 9){
+			skidka = 5;
+		}
+		break;
+	case 6:
+		if(DateDay == 1 || DateDay == 12){
+			skidka = 5;
+		}
+		break;
+	case 7:
+		break;
+	case 8:
+		break;
+	case 9:
+		if(DateDay == 1){
+			skidka = 5;
+		}
+		break;
+	case 10:
+		if(DateDay == 5){
+			skidka = 5;
+		}
+		break;
+	case 11:
+		if(DateDay == 4){
+			skidka = 5;
+		}
+		break;
+	case 12:
+		if(DateDay == 31){
+			skidka = 5;
+		}
+		break;
+	}
+}
 
+//-----------------------------------------------------------------------------
+float checkSkidka(int skidka, float priceValue, float costValue){
+	if (skidka != 0) {
+	  costValue = costValue - costValue * skidka / 100;
+	   return costValue;
+	}
+}
+
+bool checkError2(int skidka){
+	if (skidka != 0) {
+		return true;
+	}
+	else{
+		return false;
+    }
+}
