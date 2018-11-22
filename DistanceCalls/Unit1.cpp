@@ -49,8 +49,8 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 	//Рассчет скидки исходя из даты
 	checkDate(DateDay, DateMounth, nowDate);
 	//Вывод на форму скидки
-	Label5->Caption = IntToStr(skidka);
-	Label5->Caption = Label5->Caption + " %";
+	skidkaValue->Caption = IntToStr(skidka);
+	skidkaValue->Caption = skidkaValue->Caption + " %";
 	//Проверка на выбранного оператора
     if(indexOperatorFrom == -1 ||  indexOperatorTo == -1){
 			Error1->Visible = true;
@@ -72,11 +72,11 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 		//Вывод скидки на экран
 		if (checkError2(skidka)) {
 			Error2->Visible = true;
-			Label5->Visible = true;
+			skidkaValue->Visible = true;
 		}
 		else{
 			Error2->Visible = false;
-			Label5->Visible = false;
+			skidkaValue->Visible = false;
         }
 		//Вывод на форму стоимости и цены звонка
 		Price->Caption = FloatToStrF(priceValue, ffCurrency, 6, 2);
@@ -267,8 +267,8 @@ void checkDate(int DateDay, int DateMounth, double nowDate){
 	}
 	//Проверка на "выходной день"
 	int numberOfDay = DayOfWeek(nowDate);
-	if(numberOfDay == 1){
-		skidka = 10;
+	if(numberOfDay == 1 || numberOfDay == 7){
+		skidka = 5;
 	}
 }
 
@@ -344,9 +344,20 @@ void __fastcall TForm1::OperatorToKeyPress(TObject *Sender, System::WideChar &Ke
 
 void __fastcall TForm1::DateTimePicker1KeyPress(TObject *Sender, System::WideChar &Key)
 {
-    switch(Key){
+	switch(Key){
 	case(VK_RETURN):{
 		CallTime->SetFocus();
+	}
+	default: Key=0;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1KeyPress(TObject *Sender, System::WideChar &Key)
+{
+	 switch(Key){
+	case(VK_RETURN):{
+		OperatorFrom->SetFocus();
 	}
 	default: Key=0;
 	}

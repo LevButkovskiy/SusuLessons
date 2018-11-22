@@ -47,6 +47,7 @@ __published:	// IDE-managed Components
 	void __fastcall OperatorFromKeyPress(TObject *Sender, System::WideChar &Key);
 	void __fastcall OperatorToKeyPress(TObject *Sender, System::WideChar &Key);
 	void __fastcall DateTimePicker1KeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Button1KeyPress(TObject *Sender, System::WideChar &Key);
 
 
 private:	// User declarations

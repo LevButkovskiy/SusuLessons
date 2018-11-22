@@ -147,7 +147,7 @@ object Form1: TForm1
     Caption = '*'#1045#1089#1083#1080' '#1079#1074#1086#1085#1086#1082' '#1076#1083#1080#1090#1089#1103' '#1084#1077#1085#1077#1077' 60 '#1084#1080#1085#1091#1090
   end
   object skidkaValue: TLabel
-    Left = 67
+    Left = 68
     Top = 123
     Width = 11
     Height = 13
@@ -230,5 +230,6 @@ object Form1: TForm1
     Caption = #1056#1072#1089#1089#1095#1080#1090#1072#1090#1100
     TabOrder = 5
     OnClick = Button1Click
+    OnKeyPress = Button1KeyPress
   end
 end
