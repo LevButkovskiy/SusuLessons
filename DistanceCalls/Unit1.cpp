@@ -9,6 +9,7 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 	int DistanceValue, timeValue;
+<<<<<<< HEAD
 	int indexOperatorFrom, indexOperatorTo;
 	int DateDay, DateMounth;
 	int skidka;
@@ -21,6 +22,10 @@ TForm1 *Form1;
 	bool isChecked;
 	bool checkError2(int skidka);
 
+=======
+	float priceValue, CostValue;
+	void switchDistance(int Distance);
+>>>>>>> parent of c4be274... Calls 1.1
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
@@ -40,6 +45,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 	nowDate = DateTimePicker1->Date;
 	DistanceValue = StrToInt(DistanceBetweenCities->Text);
 	timeValue = StrToInt(CallTime->Text);
+<<<<<<< HEAD
 	indexOperatorFrom = OperatorFrom->ItemIndex;
 	indexOperatorTo = OperatorTo->ItemIndex;
 	//Сегодняшний день (число)
@@ -310,10 +316,27 @@ void __fastcall TForm1::CallTimeKeyPress(TObject *Sender, System::WideChar &Key)
 		Button1->SetFocus();
 	}
 	default: Key=0;
+=======
+	switchDistance(DistanceValue);
+    Price->Caption = FloatToStrF(priceValue, ffCurrency, 6, 2);
+	Cost->Caption = FloatToStrF(priceValue*timeValue, ffCurrency, 6, 2);
+}
+
+void switchDistance(int Distance){
+
+	switch(Distance){
+		if (Distance <= 100) priceValue = 2.15;
+		else if (Distance > 100 && Distance <= 600) priceValue = 3.75;
+		else if (Distance > 600 && Distance <= 1200) priceValue = 4.13;
+		else if (Distance > 1200 && Distance <= 3000) priceValue = 4.00;
+		else if (Distance > 3000 && Distance <= 5000) priceValue = 5.55;
+		else if (Distance > 5000) priceValue = 6.15;
+>>>>>>> parent of c4be274... Calls 1.1
 	}
 }
 //---------------------------------------------------------------------------
 
+<<<<<<< HEAD
 void __fastcall TForm1::FormActivate(TObject *Sender)
 {
 	OperatorFrom->SetFocus();
@@ -364,3 +387,5 @@ void __fastcall TForm1::Button1KeyPress(TObject *Sender, System::WideChar &Key)
 }
 //---------------------------------------------------------------------------
 
+=======
+>>>>>>> parent of c4be274... Calls 1.1

@@ -1,6 +1,12 @@
 
  Start Length Name Class
+<<<<<<< HEAD
  0001:00401000 0000055C8H _TEXT                  CODE
  0002:00407000 000000CC4H _DATA                  DATA
  0003:00407CC4 0000001B8H _BSS                   BSS
+=======
+ 0001:00401000 000004960H _TEXT                  CODE
+ 0002:00406000 000000A80H _DATA                  DATA
+ 0003:00406A80 000000198H _BSS                   BSS
+>>>>>>> parent of c4be274... Calls 1.1
  0004:00000000 00000009CH _TLS                   TLS

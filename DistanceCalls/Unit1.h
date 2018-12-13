@@ -17,13 +17,22 @@
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
+<<<<<<< HEAD
 	TLabel *LabelOutAbonent;
 	TLabel *LabelIncomingAbonent;
+=======
+	TComboBox *ComboBox1;
+	TLabel *LabelOutAbonent;
+	TLabel *LabelIncomingAbonent;
+	TLabel *LabelOutCountry;
+	TLabel *LabelInCountry;
+	TComboBox *ComboBox2;
+>>>>>>> parent of c4be274... Calls 1.1
 	TLabel *LabelCallTime;
 	TEdit *CallTime;
 	TLabel *LabelMinutes;
-	TComboBox *OperatorFrom;
-	TComboBox *OperatorTo;
+	TComboBox *ComboBox3;
+	TComboBox *ComboBox4;
 	TDateTimePicker *DateTimePicker1;
 	TLabel *LabelDistanceBetweenCities;
 	TEdit *DistanceBetweenCities;
@@ -33,6 +42,7 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TLabel *LabelPrice;
 	TLabel *Price;
+<<<<<<< HEAD
 	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
@@ -49,6 +59,10 @@ __published:	// IDE-managed Components
 	void __fastcall DateTimePicker1KeyPress(TObject *Sender, System::WideChar &Key);
 	void __fastcall Button1KeyPress(TObject *Sender, System::WideChar &Key);
 
+=======
+	TImage *Image1;
+	void __fastcall Button1Click(TObject *Sender);
+>>>>>>> parent of c4be274... Calls 1.1
 
 private:	// User declarations
 public:		// User declarations

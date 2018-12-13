@@ -1,10 +1,22 @@
 [Stats]
-EditorSecs=13525
+<<<<<<< HEAD
+EditorSecs=13638
 DesignerSecs=4625
 InspectorSecs=869
-CompileSecs=243728
-OtherSecs=503
+CompileSecs=252590
+OtherSecs=525
 StartTime=25.10.2018 10:37:03
 RealKeys=0
 EffectiveKeys=0
 DebugSecs=558
+=======
+EditorSecs=1850
+DesignerSecs=1075
+InspectorSecs=300
+CompileSecs=38394
+OtherSecs=5
+StartTime=25.10.2018 10:37:03
+RealKeys=0
+EffectiveKeys=0
+DebugSecs=53
+>>>>>>> parent of c4be274... Calls 1.1
